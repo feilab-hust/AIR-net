@@ -15,7 +15,7 @@ Ref: \
   - Waiting for several minutes. PSF will be saved in forms of ".mat" in "./psf_matrix"
 * Deconvolution for FLFM 3D reconstruction with/without DAO
   - Click "deconv_and_DAO.m",Setting the parameter DAO to 0 indicates the use of the traditional light field deconvolution algorithm, while setting it to 1 enables the DAO  algorithm.
-  - Choose the 2D LF images
+  - Choose the  view stack of LF images
   - Waiting for several minutes. Deconvolution results will be saved at the child folder "Deconv"
   \
   *Note: Users can set the iterative times in "deconv_and_DAO.m"*
