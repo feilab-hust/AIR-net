@@ -9,7 +9,7 @@ specifically designed for in vivo imaging applications in light field microscopy
 
 ## System Requirements
 - Windows 10. Linux should be able to run the Python-based codes.
-- Graphics: Nvidia GPU with >16 GB graphic memory (RTX 4090 recommended or multi-GPUs for parallel computing)
+- Graphics: Nvidia GPU with >16 GB graphic memory (RTX 3090 recommended or multi-GPUs for parallel computing)
 - Memory: >=32 GB RAM 
 - Hard Drive: ~50GB free space (SSD recommended)
 
