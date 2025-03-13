@@ -83,7 +83,7 @@ Users can modify the parameters following the code annotations in "main.py". Typ
   ```
 
 ### Commands for Test
-The path to pre-trained weights is pre-configured in the configuration file via the basedir and expname parameters.
+The path to pre-trained weights is pre-configured in the configuration file via the "basedir" and "expname" parameters.
 #### Example 1: Experimental data testing
 * Commands:
   ```
