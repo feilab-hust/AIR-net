@@ -1,6 +1,6 @@
 % %% Import dependecies
-import2ws();
 addpath ./util
+import2ws();
 clc;
 clear all;
 % Import configurations of FLFM setup
