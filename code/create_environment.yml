@@ -1,0 +1,22 @@
+name: AIR-NET
+channels:
+  - pytorch
+  - conda-forge
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.10.8
+  - cudatoolkit=11.8
+  - pytorch=2.0.1
+  - torchvision=0.15.2
+  - pip
+  - pip:
+    - tensorboard==2.10.1
+    - scipy==1.12.0
+    - imageio
+    - tifffile
+    - scikit-image
+    - matplotlib
+    - six==1.16
+    - tqdm==4.64.1
+    - mat73==0.59

@@ -1,0 +1,13 @@
+pitch=125;
+pixel_size=20;
+M=27.8;
+NA=1;
+lamda=1.6;
+d_camera=9.6*1e3;
+FOV=d_camera/M;
+Rxy=pitch/M;
+F=1/(2*(NA/M));
+sr=pitch/(0.47*lamda/(NA/M));
+Dof=4.*lamda.*F.^2.*(0.5.*(pitch./(1.22.*lamda.*F)).^2+1)./M^2;
+% Dof=(2+sr^2)*lamda/(2*NA^2);
+fprintf('sr:%f,Rxy:%f um  fov:%f  dof:%f',sr,Rxy,FOV,Dof);
