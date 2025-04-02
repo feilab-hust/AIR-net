@@ -1,5 +1,5 @@
 
-from psf_gen_abre import PsfGenerator3D
+from psf_gen_aber import PsfGenerator
 import mat73
 from core.utils.utils import *
 ##please run on cpu,which define the device to cpu in glbSettings.py!!!!!
@@ -34,7 +34,7 @@ for i in range(view_num):
     # tifffile.imwrite(f'output/psf/psf_raw_{i}.tif', psf_view.cpu().detach().numpy().astype(np.float32))
     psf_view = torch.fft.fftshift(psf_view)
     kbase[i, :, :, :] = torch.fft.fftn(psf_view,dim=(1, 2))
-psf = PsfGenerator3D(kbase,
+psf = PsfGenerator(kbase,
                      units=(psf_dz, psf_dy, psf_dx),
                      na_detection=n_detection,
                      lam_detection=emission_wavelength,
