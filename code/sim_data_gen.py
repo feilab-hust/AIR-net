@@ -34,11 +34,11 @@ for i in range(view_num):
     # tifffile.imwrite(f'output/psf/psf_raw_{i}.tif', psf_view.cpu().detach().numpy().astype(np.float32))
     psf_view = torch.fft.fftshift(psf_view)
     kbase[i, :, :, :] = torch.fft.fftn(psf_view,dim=(1, 2))
-psf = PsfGenerator(kbase,
-                     units=(psf_dz, psf_dy, psf_dx),
-                     na_detection=n_detection,
-                     lam_detection=emission_wavelength,
-                     n=n_obj)
+    psf = PsfGenerator(kbase,
+                         units=(psf_dy, psf_dx),
+                         na_detection=n_detection,
+                         lam_detection=emission_wavelength,
+                         n=n_obj)
 k4=torch.rand(view_num,1)
 k5=torch.full((view_num,1), fill_value=0.5)
 k6_15=torch.rand((view_num,10))
