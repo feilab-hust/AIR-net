@@ -13,7 +13,7 @@ from core.utils.utils import *
 from core.utils.Coord import Coord
 from glbSettings import *
 from torch.utils.tensorboard import SummaryWriter
-from psf_gen_abre import PsfGenerator
+from psf_gen_aber import PsfGenerator
 
 def  train(Flags):
     ## Load data from file
