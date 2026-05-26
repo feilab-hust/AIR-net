@@ -15,7 +15,7 @@ specifically designed for in vivo imaging applications in light field microscopy
 
 ## Dependencies
 ```
-    RTX3090   Author's Recommendation
+    RTX3090   
   - python=3.10.8
   - cudatoolkit=11.8
   - pytorch=2.0.1
@@ -44,7 +44,7 @@ specifically designed for in vivo imaging applications in light field microscopy
   - tqdm==4.64.1
   - mat73==0.59
 ```
-***Note: We provide two packages' list (".code/create_environment_RTX3090.yml")Author's Recommendation &(".code/create_environment_RTX5090.yml"), containing the required dependencies can help users to fast install the running environment.
+***Note: We provide two packages' list (".code/create_environment_RTX3090.yml") &(".code/create_environment_RTX5090.yml"), containing the required dependencies can help users to fast install the running environment.
 To use this, run the following commend inside a [conda](https://docs.conda.io/en/latest/) console. This step will cost ~10 minutes (depend on the network quality)***
   ```
   conda env create -f create_environment_RTX3090.yml
@@ -114,4 +114,4 @@ The path to pre-trained weights is pre-configured in the configuration file via 
 
 ## Citation
 If you use this code and relevant data, please cite the corresponding paper where original methods appeared:
-Fenghe Zhong, Xue Li, Mian He, et al. Ultra-fast in vivo deep-tissue 3D imaging with selective-illumination NIR-II light-field microscopy and aberration-corrected implicit neural representation reconstruction (AIR). 
+Fenghe Zhong, Xue Li, Yihang Huang, Mian He, et al. Ultra-fast in vivo deep-tissue 3D imaging with selective-illumination NIR-II light-field microscopy and aberration-corrected implicit neural representation reconstruction (AIR). 
