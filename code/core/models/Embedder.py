@@ -11,11 +11,14 @@ class Embedder:
     def get_by_name(embedder_type:str=None, *args, **kwargs):
         if embedder_type is None or embedder_type == 'None':
             embedder_type = "BasicEmbedder"
-        try:
-            embedder = eval(embedder_type)(*args, **kwargs)
-        except:
-            raise ValueError(f"Type {embedder_type} not recognized!")
-        return embedder
+        # try:
+        #     embedder = eval(embedder_type)(*args, **kwargs)
+        #     print(embedder)
+        # except:
+        #     raise ValueError(f"Type {embedder_type} not recognized!")
+
+
+        return PositionalEncoder(*args, **kwargs)
 
 class BasicEmbedder:
     """

@@ -6,43 +6,43 @@ clear all;
 % Import configurations of FLFM setup
 Config.gridType =  'Reg';
 Config.focus_shift_ratio=0.3;
-Config.NA =1;
-Config.M=27.78;%27.78;
+Config.NA =0.45;
+Config.M=10;%27.78;
 Config.f1 = 200000;
 Config.fobj = Config.f1/Config.M;         %focal length of the objective lens. Camera.fobj = Camera.ftl/Camera.M
 
-Config.f2 = 200000;%150000
-Config.fm = 30000;          %20000、15000 %fm - focal length of the micro-lens.
+Config.f2 = 300000;%150000
+Config.fm = 55000;          %20000、15000 %fm - focal length of the micro-lens.
 Config.mla2sensor = Config.fm;   %distance between the MLA plane and camera sensor plane.
 
-Config.lensPitch = 1700;%1000/1500
-Config.d1=2300;%2400/18000
-Config.WaveLength = 1010*1e-3;
-Config.pixelPitch = 15;  %the number of pixels between two horizontally neighboring lenslets.
+Config.lensPitch = 2000;%1000/1500
+Config.d1=2000;%2400/18000
+Config.WaveLength = 532*1e-3;
+Config.pixelPitch = 6.5;  %the number of pixels between two horizontally neighboring lenslets.
 Config.spacingPixels = Config.d1/Config.pixelPitch;  % sensor pixel pitch (in ?m).
 Config.MLAPixels = Config.lensPitch/Config.pixelPitch;  % sensor pixel pitch (in ?m).
 
 % Config.lensPitch = Config.pixelPitch*Config.spacingPixels;
 
-Config.immersion_n=1.33;
+Config.immersion_n=1;
 Config.n  = 1;
-superResFactor =2; % superResFactor controls the lateral resolution of the reconstructed object. It is interpreted as a multiple of the lenslet resolution (1 voxel/lenslet). superResFactor =3default1 means the object is reconstructed at sensor resolution, while superResFactor = 1 means lenslet resolution.
-Config.SensorSize = [512,640].*superResFactor; %the size of the input light field image,[512,640]
+superResFactor =1; % superResFactor controls the lateral resolution of the reconstructed object. It is interpreted as a multiple of the lenslet resolution (1 voxel/lenslet). superResFactor =3default1 means the object is reconstructed at sensor resolution, while superResFactor = 1 means lenslet resolution.
+Config.SensorSize = [2048,2048].*superResFactor; %the size of the input light field image,[512,640]
 
-Config.view_num=9;
+Config.view_num=19;
 Config.coordi=zeros(Config.view_num,2);%coordi is the coordinate of center of each microlens on camera Sensor
-Config.coordi(:,1)=[100, 108, 101, 252, 256,263 ,414, 413,409]'.*superResFactor+1;
-Config.coordi(:,2)=[161, 313, 472, 174, 320,467, 158, 322,464]'.*superResFactor+1;
+Config.coordi(:,1)=[461,461,461, 728,728,728,728, 995,995,995,995,995, 1262,1262,1262,1262, 1529,1529,1529]'.*superResFactor+1;%y
+Config.coordi(:,2)=[684,992,1300, 530,838,1146,1454, 376,684,992,1300,1608, 530,838,1146,1454, 684,992,1300]'.*superResFactor+1;%x
 
 Config.X_center = ceil(Config.SensorSize(1)/2);
 Config.Y_center = ceil(Config.SensorSize(2)/2);
-Config.depthStep = 4;
+Config.depthStep = 25;
 % Config.depthRange = [0,0];
-Config.depthRange =[-112 ,112];%[-112 ,112]、[-88 ,88] ;
+Config.depthRange =[-200 ,1000];%[-112 ,112]、[-88 ,88] ;
 Config.MLAnumX = 3;
 Config.MLAnumY = 3;
 
-d_max=floor(Config.d1*sqrt(2));
+d_max=floor(Config.d1*2.5);
 D_pupuil=Config.f2*Config.NA*2/Config.M;
 Config.FOV=Config.d1*Config.f2/Config.fm/Config.M;
 system_magnification=Config.f1/Config.fobj*Config.fm/Config.f2;

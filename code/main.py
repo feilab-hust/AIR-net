@@ -14,7 +14,7 @@ from glbSettings import *
 flags.DEFINE_enum('action', 'TRAIN', ['TRAIN','TEST'], 'Action: TRAIN or TEST.')
 flags.DEFINE_string('basedir', './logs/', 'Where to store ckpts and logs.')
 flags.DEFINE_string('expname', 'exp', help='Experiment name.')
-flags.DEFINE_string('datadir', './data/LF/exp', 'Input data path.')
+flags.DEFINE_string('datadir', './data/exp_data_test', 'Input data path.')
 # embedder configs
 flags.DEFINE_enum('embeddertype', 'None', ['None','PositionalEncoder'], 'Encoder type.')
 # PositionalEncoder
@@ -82,7 +82,7 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+    # os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
     # np.random.seed(0)
     print(os.getcwd())
     if DEVICE.type == 'cuda':

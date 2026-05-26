@@ -9,12 +9,13 @@ specifically designed for in vivo imaging applications in light field microscopy
 
 ## System Requirements
 - Windows 10. Linux should be able to run the Python-based codes.
-- Graphics: Nvidia GPU with >16 GB graphic memory (RTX 3090 recommended or multi-GPUs for parallel computing)
+- Graphics: Nvidia GPU with >18 GB graphic memory (single RTX 3090 recommended or multi-GPUs for parallel computing)
 - Memory: >=32 GB RAM 
 - Hard Drive: ~50GB free space (SSD recommended)
 
 ## Dependencies
 ```
+    RTX3090   Author's Recommendation
   - python=3.10.8
   - cudatoolkit=11.8
   - pytorch=2.0.1
@@ -28,10 +29,26 @@ specifically designed for in vivo imaging applications in light field microscopy
   - mat73==0.59
 ```
 
-***Note: We provide a packages' list (".code/create_environment.yml"), containing the required dependencies can help users to fast install the running environment.
+
+```
+    RTX5090
+  - python=3.11
+  - cudatoolkit=12.8
+  - torch==2.11.0
+  - torchvision==0.26.0
+  - tensorboard==2.20.0
+  - scipy==1.12.0
+  - imageio
+  - tifffile
+  - six==1.16.0
+  - tqdm==4.64.1
+  - mat73==0.59
+```
+***Note: We provide two packages' list (".code/create_environment_RTX3090.yml")Author's Recommendation &(".code/create_environment_RTX5090.yml"), containing the required dependencies can help users to fast install the running environment.
 To use this, run the following commend inside a [conda](https://docs.conda.io/en/latest/) console. This step will cost ~10 minutes (depend on the network quality)***
   ```
-  conda env create -f create_environment.yml
+  conda env create -f create_environment_RTX3090.yml
+  or conda env create -f create_environment_RTX5090.yml
   ```
 
 ## Overview of repository
